@@ -1,8 +1,7 @@
 <x-layouts.base>
 
-
     @if(in_array(request()->route()->getName(), ['dashboard', 'profile', 'profile-example', 'users', 'bootstrap-tables', 'transactions',
-    'buttons',
+    'buttons','reports',
     'forms', 'modals', 'notifications', 'typography', 'upgrade-to-pro']))
 
     {{-- Nav --}}
@@ -12,6 +11,9 @@
     <main class="content">
         {{-- TopBar --}}
         @include('layouts.topbar')
+
+        
+        <hr>
         {{ $slot }}
         {{-- Footer --}}
         @include('layouts.footer')
@@ -30,4 +32,11 @@
     {{ $slot }}
 
     @endif
+      <!-- Alpine.js -->
+      <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<!-- Livewire Scripts -->
+@livewireScripts
+
+
 </x-layouts.base>

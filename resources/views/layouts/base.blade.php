@@ -21,6 +21,9 @@
         <meta  property="og:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-laravel-dashboard/volt-free-laravel-dashboard.jpg"></meta>
         <meta  property="og:description" content="Volt Laravel Admin Dashboard features dozens of UI components and a Laravel backend with Livewire & Alpine.js"></meta>
         <meta  property="og:site_name" content="Themesberg"></meta>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link id="swal-theme" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+
     @endif
 
     <!-- Favicons -->
@@ -56,7 +59,6 @@
 
     @livewireStyles
 
-    @livewireScripts
 
     <!-- Core -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -132,6 +134,14 @@
     @endif
 
     {{ $slot }}
+   
+    
+      <!-- Alpine.js -->
+      <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<!-- Livewire Scripts -->
+@livewireScripts
+
 
 </body>
 
