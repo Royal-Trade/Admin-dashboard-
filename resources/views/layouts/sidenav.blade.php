@@ -6,7 +6,7 @@
           <img src="/assets/img/logo.png" class="card-img-top rounded-circle border-white" alt="Bonnie Green">
         </div>
         <div class="d-block">
-          <h2 class="h5 mb-3">Hi, Jane</h2>
+          <h2 class="h5 mb-3">{{  auth()->user()->first_name ? auth()->user()->first_name . ' ' . auth()->user()->last_name : 'User Name'}}</h2>
           <a href="/login" class="btn btn-secondary btn-sm d-inline-flex align-items-center">
             <svg class="icon icon-xxs me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg">
@@ -350,7 +350,7 @@
       </li> -->
     </ul>
   </div>
-  <div class="pt-12">
+  <div class="pt-12  align-items-center">
     <span
       class="  text-center text-white-900">{{  auth()->user()->first_name ? auth()->user()->first_name . ' ' . auth()->user()->last_name : 'User Name'}}</span>
   </div>

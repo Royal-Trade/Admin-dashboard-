@@ -157,7 +157,7 @@
                             alt="Avatar">
                         <div class="d-block">
                             <span class="fw-bold">Admin</span>
-                            <div class="small text-gray">admin@volt.com</div>
+                            <div class="small text-gray">admin@gmail.com</div>
                         </div>
                     </a>
                 </td>

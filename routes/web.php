@@ -27,6 +27,9 @@ use App\Http\Livewire\UpgradeToPro;
 use App\Http\Livewire\Users;
 use App\Http\Livewire\Reports;
 use App\Http\Livewire\EditReport;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\StudentController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,7 +55,16 @@ Route::get('/404', Err404::class)->name('404');
 Route::get('/500', Err500::class)->name('500');
 Route::get('/upgrade-to-pro', UpgradeToPro::class)->name('upgrade-to-pro');
 
+Route::middleware('admin')->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+});
+
+Route::middleware('student')->group(function () {
+    Route::get('/user', [StudentController::class, 'index'])->name('user');
+});
+
 Route::middleware('auth')->group(function () {
+    
     Route::get('/profile', Profile::class)->name('profile');
     Route::get('/profile-example', ProfileExample::class)->name('profile-example');
     Route::get('/users', Users::class)->name('users');

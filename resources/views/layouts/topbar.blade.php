@@ -18,7 +18,7 @@
                           clip-rule="evenodd"></path>
                       </svg></span></span>
                     <input type="text" class="form-control" id="item" placeholder="Item" aria-label="Search"
-                      aria-describedby="topbar-addon">
+                      aria-describedby="-addon">
                   </div>
                 </form>
 
