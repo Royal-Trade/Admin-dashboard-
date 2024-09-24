@@ -1,11 +1,16 @@
 <main>
     <title>Volt Laravel Dashboard - Sign In page</title>
     <div class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-green-500">
-        <div class="container flex items-start space-x-6">
+        <div class="container flex items-start space-x-6" >
             <!-- Tabs Section -->
-            <div class=" p-6 rounded-lg shadow-lg w-1/3">
+             <div>
+            <div class=" p-6 w-1/3">
                 <img src="assets/img/logo.png" class="bg-black" alt="">
             </div>
+            <p class="text-white text-2xl font-bold">login info</p>
+            <p class="text-white text-lg font-bold">login info</p>
+            </div>
+         
 
             <!-- Welcome Card Section -->
             <div class="welcome-card bg-white p-6 rounded-lg shadow-lg w-1/2">
@@ -100,8 +105,9 @@
         }
 
         .bg-gradient-to-r {
-            background: linear-gradient(to right, #3b82f6, #10b981);
-            /* from-blue-500 to-green-500 */
+            /* background: linear-gradient(to right, #3b82f6, #10b981); */
+            background: linear-gradient(#3b82f6, #10b981);
+            /* background-image: url('assets/img/circle.jpg'); */
         }
 
         /* Container Styles */

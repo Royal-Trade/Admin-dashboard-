@@ -31,7 +31,7 @@
     <ul class="nav flex-column pt-3 pt-md-0">
       <li class="nav-item">
         <a href="/dashboard" class="nav-link d-flex align-items-center">
-          <img src="/assets/img/logo.png" alt="Volt Logo">
+          <!-- <img src="/assets/img/logo.png" alt="Volt Logo"> -->
         </a>
       </li>
       <li class="nav-item {{ Request::segment(1) == 'dashboard' ? 'active' : '' }}">

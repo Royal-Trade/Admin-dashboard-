@@ -32,7 +32,7 @@ class Dashboard extends Component
         $reports = $query->paginate(10);
 
         // Return view with data
-        return view('dashboard', [
+        return view('livewire.dashboard', [
             'user' => $this->user,
             'reports' => $reports
         ]);
