@@ -2,26 +2,46 @@
   <div class="container-fluid px-0">
     <div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
       <div class="d-flex align-items-center">
-        <!-- Search form -->
-        <form class="navbar-search form-inline" id="navbar-search-main">
-          <div class="input-group input-group-merge search-bar">
-            <span class="input-group-text" id="topbar-addon"><svg class="icon icon-xs"
-                x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd"
-                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                  clip-rule="evenodd"></path>
-              </svg></span></span>
-            <input type="text" class="form-control" id="topbarInputIconLeft" placeholder="Search" aria-label="Search"
-              aria-describedby="topbar-addon">
-          </div>
-        </form>
+        <!-- 
         <a href="https://themesberg.com/product/laravel/volt-admin-dashboard-template" target="_blank"><button
             class="btn mx-1 me-2 btn-secondary" type="button"><i
-              class="fas fa-arrow-down mx-1"></i>Download</button></a>
-      </div>
+              class="fas fa-arrow-down mx-1"></i>Download</button></a> -->
+              
+
+              <form wire:search:300="itemSearch" class="navbar-search form-inline" id="navbar-search-main">
+                  <div class="input-group input-group-merge search-bar">
+                    <span class="input-group-text" id="topbar-addon"><svg class="icon icon-xs"
+                        x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                        fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                          d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                          clip-rule="evenodd"></path>
+                      </svg></span></span>
+                    <input type="text" class="form-control" id="item" placeholder="Item" aria-label="Search"
+                      aria-describedby="-addon">
+                  </div>
+                </form>
+
+                <form wire:search:300="testSearch" class="navbar-search form-inline" id="navbar-search-main">
+                  <div class="input-group input-group-merge search-bar">
+                    <span class="input-group-text" id="topbar-addon"><svg class="icon icon-xs"
+                        x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                        fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                          d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                          clip-rule="evenodd"></path>
+                      </svg></span></span>
+                    <input type="text" class="form-control" id="Test" placeholder="Test" aria-label="Search"
+                      aria-describedby="topbar-addon">
+                  </div>
+                </form>
+                
+            <!-- <button class="btn btn-primary input-group input-group-merge search-bar ml-50" type="submit">Item</button>
+            <button class="btn btn-primary ml-10" type="submit">Button</button> -->
+       
+            </div>
       <!-- Navbar links -->
-      <ul class="navbar-nav align-items-center">
+      <!-- <ul class="navbar-nav align-items-center">
         <li class="nav-item dropdown">
           <a class="nav-link text-dark notification-bell unread dropdown-toggle" data-unread-notifications="true"
             href="#" role="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
@@ -38,7 +58,6 @@
               <a href="#" class="list-group-item list-group-item-action border-bottom">
                 <div class="row align-items-center">
                   <div class="col-auto">
-                    <!-- Avatar -->
                     <img alt="Image placeholder" src="/assets/img/team/profile-picture-1.jpg" class="avatar-md rounded">
                   </div>
                   <div class="col ps-0 ms-2">
@@ -57,7 +76,6 @@
               <a href="#" class="list-group-item list-group-item-action border-bottom">
                 <div class="row align-items-center">
                   <div class="col-auto">
-                    <!-- Avatar -->
                     <img alt="Image placeholder" src="/assets/img/team/profile-picture-2.jpg" class="avatar-md rounded">
                   </div>
                   <div class="col ps-0 ms-2">
@@ -76,7 +94,6 @@
               <a href="#" class="list-group-item list-group-item-action border-bottom">
                 <div class="row align-items-center">
                   <div class="col-auto">
-                    <!-- Avatar -->
                     <img alt="Image placeholder" src="/assets/img/team/profile-picture-3.jpg" class="avatar-md rounded">
                   </div>
                   <div class="col ps-0 m-2">
@@ -95,7 +112,6 @@
               <a href="#" class="list-group-item list-group-item-action border-bottom">
                 <div class="row align-items-center">
                   <div class="col-auto">
-                    <!-- Avatar -->
                     <img alt="Image placeholder" src="/assets/img/team/profile-picture-4.jpg" class="avatar-md rounded">
                   </div>
                   <div class="col ps-0 ms-2">
@@ -114,7 +130,6 @@
               <a href="#" class="list-group-item list-group-item-action border-bottom">
                 <div class="row align-items-center">
                   <div class="col-auto">
-                    <!-- Avatar -->
                     <img alt="Image placeholder" src="/assets/img/team/profile-picture-5.jpg" class="avatar-md rounded">
                   </div>
                   <div class="col ps-0 ms-2">
@@ -170,7 +185,7 @@
               <livewire:logout /></a>
           </div>
         </li>
-      </ul>
+      </ul> -->
     </div>
   </div>
 </nav>

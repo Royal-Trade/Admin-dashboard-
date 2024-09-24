@@ -106,7 +106,7 @@ Also, you will need to install Composer: https://getcomposer.org/doc/00-intro.md
 
 ## Usage
 
-Register a user or login using admin@volt.com and secret and start testing the Laravel app (make sure to run the migrations and seeders for these credentials to be available).
+Register a user or login using admin@gmail.com and secret and start testing the Laravel app (make sure to run the migrations and seeders for these credentials to be available).
 Make sure to run the migrations and seeders for the above credentials to be available.
 
 Make sure to run the migrations and seeders for the above credentials to be available.

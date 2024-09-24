@@ -1,25 +1,21 @@
 <main>
     <title>Volt Laravel Dashboard - Sign In page</title>
-    <!-- Section -->
-    <section class="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
-        <div class="container">
-            {{-- <p class="text-center"><a href="{{ route('dashboard') }}" class="text-gray-700"><i
-                class="fas fa-angle-left me-2"></i> Back to homepage</a></p> --}}
-            <div wire:ignore.self class="row justify-content-center form-bg-image"
-                data-background-lg="/assets/img/illustrations/signin.svg">
-                <div class="col-12 d-flex align-items-center justify-content-center">
-                    <div class="bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
-                        <div class="text-center text-md-center mb-4 mt-md-0">
-                            <h1 class="mb-3 h3">Welcome back</h1>
-                            <p class="mb-0"> Create new account or
-                                <p class="mb-0">Sign in with these credentials:</p>
-                                <p class="mb-0"> Email: <strong>admin@volt.com</strong> Password:
-                                    <strong>secret</strong></p>
+    <div class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-green-500">
+        <div class="container flex items-start space-x-6" >
+            <!-- Tabs Section -->
+             <div>
+            <div class=" p-6 w-1/3">
+                <img src="assets/img/logo.png" class="bg-black" alt="">
+            </div>
+            <p class="text-white text-2xl font-bold">login info</p>
+            <p class="text-white text-lg font-bold">login info</p>
+            </div>
+         
 
-                            </p>
-                        </div>
-                        <form wire:submit.prevent="login" action="#" class="mt-4" method="POST">
-                            <!-- Form -->
+            <!-- Welcome Card Section -->
+            <div class="welcome-card bg-white p-6 rounded-lg shadow-lg w-1/2">
+                <h2 class="text-lg font-semibold mb-4">WELCOME, PLEASE LOGIN...</h2>
+                <form wire:submit.prevent="login" action="#" class="mt-4" method="POST">
                             <div class="form-group mb-4">
                                 <label for="email">Your Email</label>
                                 <div class="input-group">
@@ -34,12 +30,11 @@
                                     <input wire:model="email" type="email" class="form-control"
                                         placeholder="example@company.com" id="email" autofocus required>
                                 </div>
-                                @error('email') <div wire:key="form" class="invalid-feedback"> {{$message}} </div>
+                                @error('email')
+                                    <div wire:key="form" class="invalid-feedback"> {{$message}} </div>
                                 @enderror
                             </div>
-                            <!-- End of Form -->
                             <div class="form-group">
-                                <!-- Form -->
                                 <div class="form-group mb-4">
                                     <label for="password">Your Password</label>
                                     <div class="input-group">
@@ -53,9 +48,234 @@
                                         <input wire:model.lazy="password" type="password" placeholder="Password"
                                             class="form-control" id="password" required>
                                     </div>
-                                    @error('password') <div class="invalid-feedback"> {{ $message }} </div> @enderror
+                                    @error('password')
+                                    <div class="invalid-feedback"> {{ $message }} </div> @enderror
                                 </div>
-                                <!-- End of Form -->
+                                <div class="d-flex justify-content-between align-items-top mb-4">
+                                    <div class="form-check">
+                                        <input wire:model="remember_me" class="form-check-input" type="checkbox"
+                                            value="" id="remember">
+                                        <label class="form-check-label mb-0" for="remember">
+                                            Remember me
+                                        </label>
+                                    </div>
+                                    <div><a href="{{ route('forgot-password') }}" class="small text-right">Lost
+                                            password?</a></div>
+                                </div>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-gray-800">Sign in</button>
+                            </div>
+                        </form>
+                <a href="#" class="text-blue-500 text-sm mt-4 block text-center">Forgot Password?</a>
+            </div>
+        </div>
+
+    </div>
+
+    <style>
+        /* General Flex Container Styles */
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .items-start {
+            align-items: flex-start;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .space-x-6>*+* {
+            margin-left: 1.5rem;
+            /* 24px */
+        }
+
+        .min-h-screen {
+            min-height: 100vh;
+        }
+
+        .bg-gradient-to-r {
+            /* background: linear-gradient(to right, #3b82f6, #10b981); */
+            background: linear-gradient(#3b82f6, #10b981);
+            /* background-image: url('assets/img/circle.jpg'); */
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: start;
+        }
+
+        /* Welcome Card and Tabs Section Styles */
+        .tabs,
+        .welcome-card {
+            flex: 1;
+            /* Equal width */
+            background-color: #ffffff;
+            padding: 1.5rem;
+            /* 24px */
+            border-radius: 0.5rem;
+            /* 8px */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Text Styles */
+        .text-white {
+            color: #ffffff;
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
+
+        .font-semibold {
+            font-weight: 600;
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem;
+            /* 8px */
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+            /* 16px */
+        }
+
+        .mt-4 {
+            margin-top: 1rem;
+            /* 16px */
+        }
+
+        .border {
+            border-width: 1px;
+        }
+
+        .border-zinc-300 {
+            border-color: #d1d5db;
+        }
+
+        .rounded {
+            border-radius: 0.25rem;
+        }
+
+        .p-2 {
+            padding: 0.5rem;
+        }
+
+        .bg-green-500 {
+            background-color: #10b981;
+        }
+
+        .text-zinc-700 {
+            color: #3f3f46;
+        }
+
+        .bg-zinc-300 {
+            background-color: #d4d4d8;
+        }
+
+        .hover\:bg-green-600:hover {
+            background-color: #16a34a;
+        }
+
+        .hover\:bg-zinc-400:hover {
+            background-color: #a1a1aa;
+        }
+
+        .text-blue-500 {
+            color: #3b82f6;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .block {
+            display: block;
+        }
+    </style>
+
+    <!-- <section class="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
+        <div class="container">
+            <div wire:ignore.self class="row justify-content-center form-bg-image"
+                data-background-lg="/assets/img/illustrations/signin.svg">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+                        <div class="text-center text-md-center mb-4 mt-md-0">
+                            <h1 class="mb-3 h3">Welcome back</h1>
+                            <p class="mb-0"> Create new account or
+                            <p class="mb-0">Sign in with these credentials:</p>
+                            <p class="mb-0"> Email: <strong>admin@gmail.com</strong> Password:
+                                <strong>secret</strong>
+                            </p>
+
+                            </p>
+                        </div>
+                        <form wire:submit.prevent="login" action="#" class="mt-4" method="POST">
+                            <div class="form-group mb-4">
+                                <label for="email">Your Email</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon1"><svg
+                                            class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z">
+                                            </path>
+                                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                        </svg></span>
+                                    <input wire:model="email" type="email" class="form-control"
+                                        placeholder="example@company.com" id="email" autofocus required>
+                                </div>
+                                @error('email')
+                                    <div wire:key="form" class="invalid-feedback"> {{$message}} </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group mb-4">
+                                    <label for="password">Your Password</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2"><svg
+                                                class="icon icon-xs text-gray-600" fill="currentColor"
+                                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd"
+                                                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg></span>
+                                        <input wire:model.lazy="password" type="password" placeholder="Password"
+                                            class="form-control" id="password" required>
+                                    </div>
+                                    @error('password')
+                                    <div class="invalid-feedback"> {{ $message }} </div> @enderror
+                                </div>
                                 <div class="d-flex justify-content-between align-items-top mb-4">
                                     <div class="form-check">
                                         <input wire:model="remember_me" class="form-check-input" type="checkbox"
@@ -117,5 +337,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 </main>

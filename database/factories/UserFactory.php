@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\{User , Role};
 use Illuminate\Support\Arr;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -35,6 +35,7 @@ class UserFactory extends Factory
             'ZIP' => $this->faker->randomNumber(6),
             'number' => $this->faker->buildingNumber,
             'remember_token' => Str::random(10),
+            'role_id' => Role::factory(),
         ];
     }
 

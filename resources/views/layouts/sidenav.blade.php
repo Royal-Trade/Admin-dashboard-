@@ -3,11 +3,10 @@
     <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
       <div class="d-flex align-items-center">
         <div class="avatar-lg me-4">
-          <img src="/assets/img/team/profile-picture-3.jpg" class="card-img-top rounded-circle border-white"
-            alt="Bonnie Green">
+          <img src="/assets/img/logo.png" class="card-img-top rounded-circle border-white" alt="Bonnie Green">
         </div>
         <div class="d-block">
-          <h2 class="h5 mb-3">Hi, Jane</h2>
+          <h2 class="h5 mb-3">{{  auth()->user()->first_name ? auth()->user()->first_name . ' ' . auth()->user()->last_name : 'User Name'}}</h2>
           <a href="/login" class="btn btn-secondary btn-sm d-inline-flex align-items-center">
             <svg class="icon icon-xxs me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg">
@@ -32,12 +31,7 @@
     <ul class="nav flex-column pt-3 pt-md-0">
       <li class="nav-item">
         <a href="/dashboard" class="nav-link d-flex align-items-center">
-          <span class="sidebar-icon me-3">
-            <img src="/assets/img/brand/light.svg" height="20" width="20" alt="Volt Logo">
-          </span>
-          <span class="mt-1 ms-1 sidebar-text">
-            Volt Laravel
-          </span>
+          <!-- <img src="/assets/img/logo.png" alt="Volt Logo"> -->
         </a>
       </li>
       <li class="nav-item {{ Request::segment(1) == 'dashboard' ? 'active' : '' }}">
@@ -47,10 +41,32 @@
               <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
               <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
             </svg></span></span>
-          <span class="sidebar-text">Dashboard</span>
+          <span class="sidebar-text">Reports</span>
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item {{ Request::segment(1) == 'reports' ? 'active' : '' }}">
+        <a href="/reports" class="nav-link">
+          <span class="sidebar-icon"> <svg class="icon icon-xs me-2" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+              </path>
+            </svg>
+          </span>
+          <span class="sidebar-text">Add Report</span>
+        </a>
+      </li>
+      <!-- <li class="nav-item {{ request()->routeIs('reports', 'reports.create', 'reports.edit') ? 'active' : '' }}">
+        <a href="{{ route('reports') }}" class="nav-link">
+            <span class="sidebar-icon">
+                <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path>
+                    <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"></path>
+                </svg>
+            </span>
+            <span class="sidebar-text">Reports</span>
+        </a>
+    </li> -->
+      <!-- <li class="nav-item">
         <span class="nav-link collapsed d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
           data-bs-target="#submenu-laravel" aria-expanded="true">
           <span>
@@ -331,7 +347,15 @@
           </span>
           <span>Upgrade to Pro</span>
         </a>
-      </li>
+      </li> -->
     </ul>
+  </div>
+  <div class="pt-12  align-items-center">
+    <span
+      class="  text-center text-white-900">{{  auth()->user()->first_name ? auth()->user()->first_name . ' ' . auth()->user()->last_name : 'User Name'}}</span>
+  </div>
+  <a class="dropdown-item d-flex align-items-center">
+    <livewire:logout />
+  </a>
   </div>
 </nav>

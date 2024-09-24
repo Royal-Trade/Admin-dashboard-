@@ -1,4 +1,4 @@
-<div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
+<!-- <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
     <div class="card-body bg-gray-800 text-white pt-4">
         <button type="button" class="btn-close theme-settings-close" aria-label="Close" data-bs-toggle="collapse"
             href="#theme-settings" role="button" aria-expanded="false" aria-controls="theme-settings"></button>
@@ -50,7 +50,6 @@
                 </a><a href="https://updivision.com/" target="_blank">Updivision</a></p>
         </div>
         <div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
-            <!-- List -->
             <ul class="list-inline list-group-flush list-group-borderless text-md-end mb-0">
                 <li class="list-inline-item px-0 px-sm-2">
                     <a href="https://themesberg.com/about">About</a>
@@ -67,4 +66,4 @@
             </ul>
         </div>
     </div>
-</footer>
+</footer> -->
